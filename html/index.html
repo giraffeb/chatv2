@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>hello</title>
+        <link rel="stylesheet" typ="text/css" href="/css/index.css"/>
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <h1>chat v2</h1>
+        <nav>
+            <button id="logout">logout</button>
+        </nav>
+        <article class="border_box container border border-dark">
+            <div class="row">
+                <aside class="border_box col-3 border border-dark">
+                    <header class="border_box"><h3>friend_list</h3></header>
+                    <div>
+                        <label for="find_friend">친구찾기:</label>
+                        <input class="col" type="text" id="find_friend" name="find_friend">
+                        <button type="buttn" class="btn btn-primary">추가</button>
+                    </div>
+                    <ul class="border_box overflow-auto" id="friend_list"></ul>
+                </aside>
+                
+                <section class="border_box col border border-dark">
+                    <header class="border_box"><h3>chat_area</h3></header>
+                    <section class="border_box">
+                        <chat_area class="border_box" id="chat_area">
+                            <h3>현재 채팅방: <span id="chatroom_title"></span></h3>
+                            <!-- 여기다가 채팅 내용을 표시할 겁니다. -->
+                            <ul class="overflow-auto" id="chat_list" ></ul>
+                        </chat_area>
+                        <chat_input_area class="border_box">
+                            <textarea id="chat_input_textarea"></textarea>
+                            <button type="buttn" class="btn btn-primary">보내기</button>
+                        </chat_input_area>
+                    </section>
+                </section>
+            </div><!-- END: row -->
+        </article>
+        <script src="/socket.io/socket.io.js"></script>
+        <script>
+            var socket = io('http://localhost:8888');
+            //init function을 지정해서 초기에 필요한 것들을 정리하자.
+            socket.emit('hello', 'ho');
+        </script>
+        
+        <!-- <script src="/js/dao.js" async></script> -->
+        <script src="https://unpkg.com/dexie@latest/dist/dexie.js"></script> 
+        <script src="/js/dexie_dao.js"></script> 
+        <script src="/js/index_dom_event.js"></script>
+    </body>
+</html>

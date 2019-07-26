@@ -1,0 +1,25 @@
+body{
+    display: flex;
+    flex-direction: row;
+    height: -webkit-fill-available;
+    justify-content: center;
+}
+
+body>article{
+    width: 400px;
+    height: 300px;
+
+    -webkit-box-sizing: border-box;
+    border: 2px solid black;
+
+    display:flex;
+    justify-content: center;
+    /* align-items: center; */
+    
+}
+body>article>form{
+    display: flex;
+    -webkit-box-sizing: border-box;
+    border: 2px solid black;
+    flex-direction: column;
+}
