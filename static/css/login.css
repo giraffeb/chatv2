@@ -7,16 +7,14 @@ body{
     align-items: center;
 }
 body>article{
-    -webkit-box-sizing: border-box;    
-    border: 2px black solid;
-    width: 400px;
-    height: 300px; 
-    display: flex;
+    -webkit-box-sizing: border-box;     
+
+    flex-direction: row;
     justify-content: center;
     align-items: center;
 }
 
 body>article>form{
-    -webkit-box-sizing: border-box;    
-    border: 2px black solid;
+    margin: 0 auto;
+    width:400px;
 }
